@@ -1,0 +1,45 @@
+<div class="app-header">
+  <h1 class="app-heading">{{title}}</h1>
+</div>
+
+<mat-grid-list cols="3">
+  <mat-grid-tile></mat-grid-tile>
+  <mat-grid-tile class='login-element'>
+      <div class="login-container">
+          <div class="login-box-header">
+          </div>
+          <div class="login-box-body">
+              <mat-grid-list cols="9" rowHeight="75px">
+                  <mat-grid-tile [rowspan]="1" class="login-icon">
+                      <mat-icon>lock</mat-icon>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="7">
+                      <mat-input-container class="justifier">
+                          <input [(ngModel)]="model.username" matInput placeholder="Username" text="text">
+                      </mat-input-container>
+                  </mat-grid-tile>
+              </mat-grid-list>
+        
+              <mat-grid-list cols="9" rowHeight="100px">
+                  <mat-grid-tile [rowspan]="1"  class="login-icon">
+                      <mat-icon>remove_red_eye</mat-icon>
+                  </mat-grid-tile>
+                  <mat-grid-tile [colspan]="7">
+                      <mat-input-container class="justifier">
+                          <input [(ngModel)]="model.password" matInput placeholder="Password" text="password">
+                      </mat-input-container>
+                  </mat-grid-tile>
+              
+                </mat-grid-list>
+
+              <button (click)="login()" mat-raised-button class="login-button"> 
+                  <mat-icon>input</mat-icon> Login
+              </button>
+
+          </div>
+          
+      </div>
+  </mat-grid-tile>
+  <mat-grid-tile></mat-grid-tile>
+
+</mat-grid-list>
