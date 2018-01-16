@@ -24,7 +24,7 @@ body{
 .login-box-header{
 	width: auto;
     height: 20%;
-    background-color: #6b6d6a;
+    background-color: #ffffff;
     text-align: center;
     vertical-align: middle;
     font-size: 3em;
@@ -34,7 +34,7 @@ body{
  
 .login-box-body{
 	width: auto;
-	height:100%;
+	height:80%;
 	padding: 5% 5% 5% 5%;
 	color: #d2d2d2;
 }
@@ -49,9 +49,17 @@ body{
 }
  
 .login-button{
-	width: 100%;
+	margin-top: 5%;
+	margin-left:25%;
+	margin-bottom: 2%;
+	width: 50%;
 	padding:1.5% !important;	
-    background-color: #3eb73a;
-    font-size: 1.5em;
+    background-color: #df6075;
+	font-size: 1.5em;
+	border-radius:0.4em;
     color: #fff !important;
+}
+
+.mat-progress-bar.progressbar{
+	background-color: green;
 }

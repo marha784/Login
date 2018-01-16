@@ -1,6 +1,8 @@
+import { AlertService } from './../services/alertservice';
 import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from './../services/authenticationservice';
 import { Router, ActivatedRoute } from '@angular/router';
+import { MatProgressBar } from '@angular/material';
 
 
 @Component({
@@ -18,6 +20,7 @@ export class LoginComponent implements OnInit {
       private route: ActivatedRoute,
       private router: Router,
       private authenticationService: AuthenticationService,
+      private alertService: AlertService
       ) { }
 
   ngOnInit() {
@@ -30,10 +33,13 @@ export class LoginComponent implements OnInit {
       this.authenticationService.login(this.model.username, this.model.password)
           .subscribe(
               data => {
-                  this.router.navigate(['/register']);
+                  this.router.navigate(['/admin']);
+                  console.log(data);
               },
               error => {
                   this.loading = false;
+                  this.alertService.error('Wrong password and/or username');
+                  console.log('KORV' + error);
               });
   }
 

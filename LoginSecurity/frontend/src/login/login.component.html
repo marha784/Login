@@ -7,6 +7,7 @@
   <mat-grid-tile class='login-element'>
       <div class="login-container">
           <div class="login-box-header">
+          <img src="https://www.jenseneducation.se/themes/jensen/css/graphics/logo-blue-jensen-education.svg" height="90" width="90">
           </div>
           <div class="login-box-body">
               <mat-grid-list cols="9" rowHeight="75px">
@@ -35,8 +36,10 @@
               <button (click)="login()" mat-raised-button class="login-button"> 
                   <mat-icon>input</mat-icon> Login
               </button>
-
+              <alert></alert>
+              <mat-progress-bar class="progressbar" mode="indeterminate" *ngIf="loading" [color]="green"></mat-progress-bar>
           </div>
+          
           
       </div>
   </mat-grid-tile>

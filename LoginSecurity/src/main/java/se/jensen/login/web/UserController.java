@@ -15,13 +15,19 @@ import org.springframework.http.HttpStatus;
 import se.jensen.login.domain.User;
 import se.jensen.login.service.UserService;
 
-@CrossOrigin(origins = "http://localhost:4200", maxAge = 3600)
+
 @RestController
 public class UserController {
 
 	@Autowired
 	UserService userService;
-
+	
+	
+	@RequestMapping("/auth")
+	public @ResponseBody ResponseEntity<String> authenticate(){
+		return new ResponseEntity<String>(HttpStatus.OK);
+	}
+    
 	@RequestMapping("/users")
 	@ResponseBody
 	public List<User> getUsers() {
