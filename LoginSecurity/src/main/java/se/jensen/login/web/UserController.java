@@ -22,11 +22,6 @@ public class UserController {
 	@Autowired
 	UserService userService;
 	
-	
-	@RequestMapping("/auth")
-	public @ResponseBody ResponseEntity<String> authenticate(){
-		return new ResponseEntity<String>(HttpStatus.OK);
-	}
     
 	@RequestMapping("/users")
 	@ResponseBody
