@@ -3,6 +3,7 @@ package se.jensen.login.domain;
 import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
+import java.util.stream.Collectors;
 
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,11 +20,10 @@ public class UserPrinciple implements UserDetails  {
 	@Override
 	public Collection<? extends GrantedAuthority> getAuthorities() {
 		
-		final Set<GrantedAuthority> grntdAuths = new HashSet<GrantedAuthority>();
-		GrantedAuthority auth = new SimpleGrantedAuthority("USER");
-		grntdAuths.add(auth);
-		return grntdAuths; 
-     
+		 return user.getRoles()
+	                .stream()
+	                .map(role -> new SimpleGrantedAuthority("ROLE_" + role.getRole()))
+	                .collect(Collectors.toList());
     }
 	
 

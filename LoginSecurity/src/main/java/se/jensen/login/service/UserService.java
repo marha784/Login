@@ -31,7 +31,7 @@ public class UserService {
 	public void addUser(User user) {
 		PasswordEncoder passwordEncoder = new BCryptPasswordEncoder(11); 
 	    String encodedPassword = passwordEncoder.encode(user.getPassword());  
-	    User encodedUser = new User(user.getUsername(),encodedPassword); 
+	    User encodedUser = new User(user.getUsername(),encodedPassword, user.getRoles()); 
 		userRepository.save(encodedUser);
 	}
 

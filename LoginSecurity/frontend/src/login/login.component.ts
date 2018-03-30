@@ -5,12 +5,13 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { MatProgressBar } from '@angular/material';
 
 
+
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
   model: any = {};
   loading = false;
@@ -23,15 +24,14 @@ export class LoginComponent implements OnInit {
       private alertService: AlertService
       ) { }
 
-  ngOnInit() {
-      this.authenticationService.logout();
-  }
 
   login() {
       this.loading = true;
       console.log(this.model.password);
-      this.authenticationService.login(this.model.username, this.model.password)
-          .subscribe(
+      this.authenticationService.login(this.model.username, this.model.password);
+
+
+        /*  .subscribe(
               data => {
                   this.router.navigate(['/admin']);
                   console.log(data);
@@ -41,6 +41,8 @@ export class LoginComponent implements OnInit {
                   this.alertService.error('Wrong password and/or username');
                   console.log('KORV' + error);
               });
+              */
   }
+
 
 }

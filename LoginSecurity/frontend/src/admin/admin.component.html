@@ -1,25 +1,18 @@
 <div class="example-container mat-elevation-z8">
-    <div class="example-header">
-      <mat-form-field>
-        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
-      </mat-form-field>
-    </div>
-  
+
     <mat-table [dataSource]="dataSource">
-  
-   
-      <ng-container matColumnDef="position">
+      <ng-container matColumnDef="id">
         <mat-header-cell *matHeaderCellDef> ID</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.id}} </mat-cell>
       </ng-container>
   
-      <ng-container matColumnDef="name">
+      <ng-container matColumnDef="username">
         <mat-header-cell *matHeaderCellDef> Username</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.username}} </mat-cell>
       </ng-container>
   
       
-      <ng-container matColumnDef="weight">
+      <ng-container matColumnDef="password">
         <mat-header-cell *matHeaderCellDef> Password</mat-header-cell>
         <mat-cell *matCellDef="let element"> {{element.password}} </mat-cell>
       </ng-container>
