@@ -1,3 +1,4 @@
+import { User } from './../domain/user';
 import { AlertService } from './../services/alertservice';
 import { UserService } from './../services/userservice';
 import { Component } from '@angular/core';

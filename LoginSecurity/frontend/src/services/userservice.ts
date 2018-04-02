@@ -11,21 +11,34 @@ export class UserService {
     constructor(private http: Http) { }
 
 
-    create(user: User) {
+    create(user: any) {
+        console.log(JSON.stringify(user));
         return this.http.post('http://localhost:8080/users', JSON.stringify(user), {headers: this.getHeaders()})
     ;
     }
 
-    getUsers(){
+    updateUser(user: any) {
+      return this.http.put('http://localhost:8080/users', JSON.stringify(user), {headers: this.getHeaders()});
+    }
+
+    getUsers() {
        let users = this.http
       .get('http://localhost:8080/users', {headers: this.getHeaders()})
       .map((res: Response) => res.json());
       return users;
     }
 
+    delete(id:number )
+    {
+        return this.http.delete('http://localhost:8080/users/' + id, {headers: this.getHeaders()})
+        .map((res: Response) => res.json());
+    }
+
      getHeaders() {
-     const headers = new Headers({'Content-type': 'application/x-www-form-urlencoded; charset=utf-8',
-      'Authorization': 'Bearer '+ Cookie.get('access_token')});
+     const headers = new Headers({'Content-type': 'application/json',
+      'Authorization': 'Bearer ' + Cookie.get('access_token')});
         return headers;
       }
+
+
     }

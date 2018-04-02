@@ -1,3 +1,4 @@
+import { AdminEditComponent } from './../admin/admin-edit/admin-edit.component';
 import { AdminComponent } from './../admin/admin.component';
 import { AlertComponent } from './../directives/alert.component';
 import { AlertService } from './../services/alertservice';
@@ -11,8 +12,10 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 import { MatButtonModule, MatCheckboxModule, MatGridListModule, MatInputModule, MatIconModule, MatCard,
-   MatTableModule } from '@angular/material';
-import { MatFormFieldModule } from '@angular/material';
+   MatTableModule,
+   MatDialogModule,
+   MatTabsModule, MatCardModule} from '@angular/material';
+import { MatFormFieldModule} from '@angular/material';
 import { HttpModule } from '@angular/http';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import {MatProgressBarModule} from '@angular/material/progress-bar';
@@ -24,9 +27,13 @@ import {MatProgressBarModule} from '@angular/material/progress-bar';
     LoginComponent,
     RegisterComponent,
     AlertComponent,
-    AdminComponent
+    AdminComponent,
+    AdminEditComponent
 ],
   imports: [
+    MatCardModule,
+    MatTabsModule,
+    MatDialogModule,
     BrowserModule,
     HttpModule,
     BrowserAnimationsModule,

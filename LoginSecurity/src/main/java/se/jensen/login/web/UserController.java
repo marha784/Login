@@ -35,15 +35,14 @@ public class UserController {
 	}
 
 	@RequestMapping(method = RequestMethod.POST, value = "/users")
-	public @ResponseBody ResponseEntity<String> addUser(@RequestBody User user) {
+	public void addUser(@RequestBody User user) {
+		System.out.println(user.getUsername());
 		userService.addUser(user);
-		HttpHeaders responseHeaders = new HttpHeaders();
-		responseHeaders.add("Content-Type", "application/json");
-		return new ResponseEntity<String>(responseHeaders, HttpStatus.OK);
 	}
 
 	@RequestMapping(method = RequestMethod.PUT, value = "/users")
 	public void updateUser(@RequestBody User user) {
+		System.out.println("KORV"+user);
 		userService.updateUser(user);
 	}
 
